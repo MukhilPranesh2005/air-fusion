@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality Prediction</title>
+    <meta name="description" content="AI-powered air quality prediction system">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .description {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        .button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        .features {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            text-align: left;
+            color: white;
+        }
+        .feature {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .iframe-container {
+            background: white;
+            border-radius: 15px;
+            padding: 1rem;
+            margin-top: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        iframe {
+            border: none;
+            border-radius: 10px;
+            width: 100%;
+            height: 600px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            iframe {
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🌍</div>
+        <h1>Air Quality Prediction</h1>
+        <p class="description">
+            Advanced AI-powered system for real-time air quality monitoring and prediction using deep learning technology.
+        </p>
+        
+        <div class="iframe-container">
+            <iframe src="https://air-quality-demo.streamlit.app" title="Air Quality App"></iframe>
+        </div>
+        
+        <div style="margin-top: 2rem;">
+            <a href="https://air-quality-demo.streamlit.app" class="button" target="_blank">
+                🚀 Launch Full App
+            </a>
+            <a href="#features" class="button" style="background: rgba(255, 255, 255, 0.2);">
+                📋 Features
+            </a>
+        </div>
+        
+        <div id="features" class="features">
+            <h3 style="margin-bottom: 1rem;">🎯 Key Features</h3>
+            <div class="feature">
+                <span>📸</span>
+                <span>Camera integration for image capture</span>
+            </div>
+            <div class="feature">
+                <span>📡</span>
+                <span>Real-time sensor data processing</span>
+            </div>
+            <div class="feature">
+                <span>🎯</span>
+                <span>Instant air quality predictions</span>
+            </div>
+            <div class="feature">
+                <span>📱</span>
+                <span>Mobile-optimized interface</span>
+            </div>
+            <div class="feature">
+                <span>📍</span>
+                <span>Location-based predictions</span>
+            </div>
+            <div class="feature">
+                <span>💾</span>
+                <span>Offline functionality</span>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Fallback if iframe doesn't load
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const iframe = document.querySelector('iframe');
+                if (!iframe || iframe.contentDocument === null) {
+                    document.querySelector('.iframe-container').innerHTML = 
+                        '<p style="color: #666; padding: 2rem;">Loading app... <br><a href="https://air-quality-demo.streamlit.app" style="color: #667eea;">Click here to open directly</a></p>';
+                }
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

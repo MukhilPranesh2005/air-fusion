@@ -1,12 +1,13 @@
 {
   "name": "air-quality-prediction",
   "version": "1.0.0",
-  "description": "Air Quality Prediction Mobile App - Streamlit Application",
-  "main": "mobile_app.py",
+  "description": "Air Quality Prediction Mobile App - Deployed on Vercel",
+  "main": "index.html",
   "scripts": {
-    "start": "streamlit run mobile_app.py --server.port 8501",
+    "build": "echo 'Building for Vercel deployment...'",
+    "start": "python -m http.server 3000",
     "dev": "streamlit run mobile_app.py --server.port 8501",
-    "build": "echo 'Building app...'"
+    "vercel-build": "echo 'Vercel build complete'"
   },
   "dependencies": {
     "streamlit": "^1.55.0"
@@ -18,7 +19,8 @@
     "air-quality",
     "prediction",
     "mobile",
-    "streamlit"
+    "streamlit",
+    "vercel"
   ],
   "author": "Air Quality Prediction System",
   "license": "MIT"
