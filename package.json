@@ -1,14 +1,18 @@
 {
-  "name": "air-quality-app",
+  "name": "air-quality-prediction",
   "version": "1.0.0",
-  "description": "Air Quality Prediction Mobile App",
-  "main": "index.html",
+  "description": "Air Quality Prediction Mobile App - Streamlit Application",
+  "main": "mobile_app.py",
   "scripts": {
-    "build": "echo 'Building for Netlify deployment...'",
-    "start": "streamlit run mobile_app.py --server.port 8501"
+    "start": "streamlit run mobile_app.py --server.port 8501",
+    "dev": "streamlit run mobile_app.py --server.port 8501",
+    "build": "echo 'Building app...'"
   },
   "dependencies": {
     "streamlit": "^1.55.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   },
   "keywords": [
     "air-quality",
@@ -16,5 +20,6 @@
     "mobile",
     "streamlit"
   ],
-  "author": "Air Quality Prediction System"
+  "author": "Air Quality Prediction System",
+  "license": "MIT"
 }
