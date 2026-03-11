@@ -1,7 +1,10 @@
 {
   "version": 2,
-  "name": "air-quality-prediction",
   "builds": [
+    {
+      "src": "api/streamlit.py",
+      "use": "@vercel/python"
+    },
     {
       "src": "index.html",
       "use": "@vercel/static"
@@ -9,12 +12,19 @@
   ],
   "routes": [
     {
+      "src": "/app",
+      "dest": "/api/streamlit.py"
+    },
+    {
       "src": "/",
       "dest": "/index.html"
     },
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
-  ]
+  ],
+  "env": {
+    "PYTHON_VERSION": "3.9"
+  }
 }
